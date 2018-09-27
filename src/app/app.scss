@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.home{
+    background: color($colors, primary);
+    color: color($colors, light);
+    margin-top:30px;
+}
+
+#logo{
+   
+    float:right;
+   margin-right:8px;
+
+
+}
+
+.toolbar-title{
+    text-align: left;
+    margin-top: 10px;
+}
+
+.tabs-md, .tab-button-icon{
+  color: #ccc;
+}
+ion-icon{
+float:right;
+padding:3px 3px;
+border: 0.5px solid white;
+}
