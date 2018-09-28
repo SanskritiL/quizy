@@ -18,7 +18,7 @@
 .home{
     background: color($colors, primary);
     color: color($colors, light);
-    margin-top:30px;
+    //margin-top:30px;
 }
 
 #logo{
@@ -35,10 +35,10 @@
 }
 
 .tabs-md, .tab-button-icon{
-  color: #ccc;
+  color: rgb(179, 159, 159);
 }
-ion-icon{
+ion-title ion-icon{
 float:right;
-padding:3px 3px;
+padding:3px 5px;
 border: 0.5px solid white;
 }

@@ -1,3 +1,31 @@
 page-home {
+ .home h2{
+     font-size:20px;
+     padding:5px;
+   
+ }
+
+ .teacher{
+     align-content: center;
+     padding-top:15px;
+ }
+ ion-list{
+     width: 85%;
+     position:relative;
+     
+ }
+ .grid{
+     margin-top:20px;
+     box-sizing: border-box;
+ }
+
+ .grid .icon{
+     font-size:45px;
+     color:rgb(36, 129, 36);
+     align-self: flex-end;
+     position: absolute;
+     margin-left:0px;
+     margin-top:2px;
+ }
  
 }

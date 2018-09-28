@@ -1,17 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+
         <ion-icon ios="ios-list-outline" md="md-list"></ion-icon>
     <img id="logo" height="40" src="../assets/imgs/monster.png" > 
     Quizy    </ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class= "home">
-  <h2>Hi Josh!</h2>
-  <p>
-   Are you ready to build a quiz?
-  </p>
-  
+  <div class="container">
+    
+  <h2 class="display-name">Hi Josh!</h2>
+  <img class="animated swing teacher" src="../assets/imgs/quizguy.jpg">
+   
+
+
+<div class="grid">
+    <ion-list>
+   <ion-item>
+     <ion-label color="input">Create Quiz</ion-label>
+     <ion-input placeholder="QuizCode001"></ion-input>
+     <ion-icon name="md-arrow-dropright-circle"></ion-icon>
+     </ion-item>
+</ion-list>
+
+</div>
+
+    
+  </div>
  
 </ion-content>
