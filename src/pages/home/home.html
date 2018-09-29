@@ -24,11 +24,11 @@
 <div class="grid">
     <ion-list>
    <ion-item>
-     <ion-label color="input">Create Quiz</ion-label>
+     <ion-label id="quizcode"color="input">Create Quiz</ion-label>
      <ion-input placeholder="QuizCode001"></ion-input>
      </ion-item>
 </ion-list>
-<button ion-button icon-only clear><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
+<button ion-button icon-only clear [navPush]="homecreatequizPage"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
 </div>
 </div>
 

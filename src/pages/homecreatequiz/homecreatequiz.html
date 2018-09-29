@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+
+        <ion-icon ios="ios-list-outline" md="md-list"></ion-icon>
+    <img id="logo" height="40" src="../assets/imgs/monster.png" > 
+    Quizy  </ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content class="home">
+
+
+
+    <form
+    [formGroup]="form"
+    (ngSubmit)="manage(form.value)">
+     <ion-list
+        margin-bottom color="go">
+       <ion-item
+          margin-bottom
+          no-lines>
+          <ion-label id="mainquizname" floating>Quiz name:</ion-label>
+          <!-- Assign our first FormControl of name to the input field -->
+
+          <ion-input
+             type="text"
+             maxlength="40"
+             formControlName="name"></ion-input>
+          <span>Please enter a framework name of no more than 40 characters</span>
+       </ion-item>
+
+
+       <!-- Assign the technologies FormArray to the form
+            where we want to track/generate new input track fields -->
+     <div class ="thebody"
+        formArrayName="questions"
+        margin-bottom>
+
+
+        <section
+        [formGroupName]="i"
+        *ngFor="let quest of form.controls.questions.controls; let i = index">
+        <ion-item-group>
+            <ion-item-divider class="itemdivider"color="secondary">Question no.{{ i + 1 }}</ion-item-divider>
+           <ion-item>
+              <ion-label floating>Question</ion-label>
+              <ion-input
+                 type="text"
+                 maxlength="50"
+                 formControlName="name"></ion-input>
+           </ion-item>
+
+
+           
+           <span
+           float-right
+           ion-button
+           icon-left
+           clear
+           color= "dark"
+           *ngIf="form.controls.questions.length> 1"
+           (click)="removeInputField(i)">
+           <ion-icon md="md-remove-circle"></ion-icon>
+          
+           
+        </span>
+
+        <span
+        float-right
+        ion-button
+        icon-left
+        clear>
+        <ion-icon md="md-options"></ion-icon>
+        </span>
+       
+
+
+
+
+     </ion-item-group>
+  </section>
+</div>
+
+
+
+<span
+            ion-button
+            float-left
+            icon-left
+            clear
+            (click)="addNewInputField()">
+               <ion-icon md="md-add-circle"color="dark"></ion-icon>
+               Add a new question
+         </span>
+
+
+        </ion-list>
+        <!-- Only allow form to be submitted IF validation criteria for
+                input fields has been successfully passed -->
+           <button
+            ion-button
+            block
+            margin-top
+            color="dark"
+            text-center
+            [disabled]="!form.valid">Submit</button>
+     </form>
+</ion-content>
