@@ -11,7 +11,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { HomecreatequizPage } from '../pages/homecreatequiz/homecreatequiz';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { LoginPage } from '../pages/login/login';
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SettingsPage,
-    HomecreatequizPage
+    HomecreatequizPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SettingsPage,
-    HomecreatequizPage
+    HomecreatequizPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
