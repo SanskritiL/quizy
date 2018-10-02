@@ -12,6 +12,27 @@ import { HomecreatequizPage } from '../pages/homecreatequiz/homecreatequiz';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
+const firebaseAuth = {
+  apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",
+  authDomain: "quizy-cb7dc.firebaseapp.com",
+  databaseURL: "https://quizy-cb7dc.firebaseio.com",
+  projectId: "quizy-cb7dc",
+  storageBucket: "quizy-cb7dc.appspot.com",
+  messagingSenderId: "640099974765"
+  
+};
+
+
+
+
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,11 +42,14 @@ import { LoginPage } from '../pages/login/login';
     TabsPage,
     SettingsPage,
     HomecreatequizPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +60,8 @@ import { LoginPage } from '../pages/login/login';
     TabsPage,
     SettingsPage,
     HomecreatequizPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

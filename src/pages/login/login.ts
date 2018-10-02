@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 /**
  * Generated class for the LoginPage page.
@@ -8,21 +10,46 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
- @ViewChild('username') uname;
- @ViewChild('password') password;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+@ViewChild('username') user;
+@ViewChild('password') password;
+
+ registerpage = RegisterPage;
+  constructor( public alertCtrl: AlertController ,private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  showAlert(message:string){
+   const alert = this.alertCtrl.create({
+    title: 'Info',
+    subTitle: message,
+    buttons: ['OK']
+}); 
+alert.present();
   }
+ 
 signIn(){
-  console.log(this.uname.value, this.password.value);
+  this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
+  .then(data => {
+    console.log('got some data' , data);
+    this.showAlert('Success You\'re logged in');
+    
+    //user os logged in 
+  })
+  .catch(error => {
+    console.log('got an error',error);
+    this.showAlert(error.message);
+  })
+  console.log('Would sign in with ' , this.user.value, this.password.value);
 }
+
+register(){
+  this.navCtrl.push(RegisterPage);
+}
+
 }
