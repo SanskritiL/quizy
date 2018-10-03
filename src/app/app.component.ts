@@ -13,7 +13,7 @@ import { ModePage } from '../pages/mode/mode';
 export class MyApp {
   //rootPage:any = TabsPage;
   // edit this after mode is created
-  rootPage:any = ModePage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ModePage } from '../pages/mode/mode';
+import { StudenthomePage } from '../pages/studenthome/studenthome';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -44,7 +45,8 @@ const firebaseAuth = {
     HomecreatequizPage,
     LoginPage,
     RegisterPage,
-    ModePage
+    ModePage,
+    StudenthomePage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ const firebaseAuth = {
     HomecreatequizPage,
     LoginPage,
     RegisterPage,
-    ModePage
+    ModePage,
+    StudenthomePage
   ],
   providers: [
     StatusBar,

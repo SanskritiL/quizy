@@ -1,7 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
 import {  NavController, RadioButton } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+import { StudenthomePage } from '../studenthome/studenthome';
 
 @Component({
   selector: 'page-mode',
@@ -22,7 +22,7 @@ export class ModePage {
         this.navCtrl.push(HomePage);
       }
       else{
-        console.log("no");
+        this.navCtrl.push(StudenthomePage);
       }
       
     }
