@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { ModePage } from '../mode/mode';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,7 +39,7 @@ signIn(){
   .then(data => {
     console.log('got some data' , data);
     this.showAlert('Success You\'re logged in');
-    
+    this.navCtrl.push(ModePage);
     //user os logged in 
   })
   .catch(error => {

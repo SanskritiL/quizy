@@ -13,7 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-
+import { ModePage } from '../pages/mode/mode';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -43,7 +43,8 @@ const firebaseAuth = {
     SettingsPage,
     HomecreatequizPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ModePage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,8 @@ const firebaseAuth = {
     SettingsPage,
     HomecreatequizPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ModePage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,72 @@
+page-mode {
+   
+    
+  ion-label{
+    font-weight: bold;
+  }  
+ion-item{
+    background: primary;
+    font-weight: bold;
+}
+.items{
+    
+  margin:auto;
+    width: 80%;
+
+}
+.img1{
+    margin-top:40px;
+    margin-right:5px;
+    height:100px;
+    width:80px;
+    animation-duration:3s;
+     animation-iteration-count:6;
+     
+}
+.img2{
+    margin-top:40px;
+    margin-right:5px;
+    height:100px;
+    width:80px;
+    animation-duration:3s;
+     animation-iteration-count:6;
+}
+h2{
+    
+    margin-right:5px;  
+    
+}
+ ion-item{
+     
+    float:right;
+    width: 25%;
+    background-color: "primary";
+   
+ }
+ ion-label{
+    
+    padding:0;
+    margin:0;
+    background-color: "primary";
+    color:"primary";
+    
+ }
+ ion-list{
+    padding:0;
+    margin:0;
+    background-color: "primary";
+    
+ }
+ .item1{
+     display: inline-block;
+     border: 5px solid rgb(86, 52, 180);
+     margin-bottom: 5px;
+     
+ }
+ .item2{
+    display: inline-block;
+    border: 5px solid rgb(102, 55, 212);
+    margin-bottom: 5px;
+    
+}
+}
