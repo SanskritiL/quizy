@@ -22,7 +22,7 @@
 
 <ion-content class="home">
  
-  <ion-list radio-group>
+  <ion-list radio-group [(ngModel)] = "mode">
     
       <h2 padding> Select Mode: </h2> 
     
@@ -33,32 +33,28 @@
     
     <ion-item>
      <ion-label>Teacher</ion-label>
-    <ion-radio value="teacher"></ion-radio>
+    <ion-radio name="radio" value="teacher"></ion-radio>
   </ion-item>
 
 </div>
 
 
   <br>
-  
-     
-     
-  
-    
-
-<!--      <ion-label>Student</ion-label>
-      <ion-radio value="student"></ion-radio> -->
+ 
       
    <div class="item2">
     <img class="animated pulse img2" src="../../assets/imgs/student.jpg">
     <ion-item>
         <ion-label>Student</ion-label>
-       <ion-radio value="student"></ion-radio>
+       <ion-radio name="radio" value="student" ></ion-radio>
      </ion-item>
     </div>
   </div>  
   </ion-list>
 
-  
+  <button class="continue" padding ion-button icon-start color="go" (click)="continueToPage()" >
+    <ion-icon  name="arrow-dropright-circle"></ion-icon>
+    Continue
+  </button> 
 
 </ion-content>
