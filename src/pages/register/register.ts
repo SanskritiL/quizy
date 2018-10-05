@@ -34,7 +34,7 @@ export class RegisterPage {
        }
      },
      {
-      text: 'Register!',
+      text: 'OK',
       handler:(click)=>{
         console.log("Register again");
         

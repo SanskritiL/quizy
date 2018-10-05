@@ -40,7 +40,7 @@ signIn(){
   this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
   .then(data => {
     console.log('got some data' , data);
-    this.showAlert('Hi!'+this.user.value + 'Success You\'re logged in');
+    this.showAlert('Hi!  '+this.user.value + ' Success You\'re logged in');
     this.navCtrl.push(ModePage);
     //user os logged in 
   })
@@ -49,6 +49,7 @@ signIn(){
     this.showAlert(error.message);
   })
   console.log('Would sign in with ' , this.user.value, this.password.value);
+  
 }
 
 register(){
