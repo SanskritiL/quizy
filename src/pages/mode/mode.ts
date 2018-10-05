@@ -1,6 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
 import {  NavController, RadioButton } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { StudenthomePage } from '../studenthome/studenthome';
 
 @Component({
@@ -19,7 +20,7 @@ export class ModePage {
   
     continueToPage(){
       if(this.mode=="teacher"){
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(TabsPage);
       }
       else{
         this.navCtrl.push(StudenthomePage);

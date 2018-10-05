@@ -34,11 +34,13 @@ export class LoginPage {
 alert.present();
   }
  
+
+
 signIn(){
   this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
   .then(data => {
     console.log('got some data' , data);
-    this.showAlert('Success You\'re logged in');
+    this.showAlert('Hi!'+this.user.value + 'Success You\'re logged in');
     this.navCtrl.push(ModePage);
     //user os logged in 
   })

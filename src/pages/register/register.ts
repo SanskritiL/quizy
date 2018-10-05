@@ -32,8 +32,16 @@ export class RegisterPage {
          console.log("Login now");
          this.returnToLogin();
        }
-     }]
-
+     },
+     {
+      text: 'Register!',
+      handler:(click)=>{
+        console.log("Register again");
+        
+      }
+    }
+    ]
+     
 
  }); 
  alert.present();
@@ -43,16 +51,20 @@ export class RegisterPage {
      this.navCtrl.push(LoginPage);
    }
 
+   
+
+
 registerUser(){
   this.fire.auth.createUserWithEmailAndPassword(this.user.value, this.password.value)
   .then(data => {
      console.log('got data' ,data);
-    this.showAlert("Successfully registered. Thank you for creating your account with us.");
+    this.showAlert("Successfully registered. Thank you for creating your account with us. Login to enjoy the app");
     
 
   })
   .catch(error => {
-  console.log('got an error: ', error);
+  //console.log('got an error: ', error);
+  this.showAlert(error.message);
   }); 
 console.log("Would register with ", this.user.value, this.password.value,this.nickname.value);
 }

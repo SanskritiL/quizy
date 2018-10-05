@@ -80,7 +80,10 @@
         float-right
         ion-button
         icon-left
-        clear>
+        clear
+        (click)="showOptions()"
+        >
+
         <ion-icon md="md-options"></ion-icon>
         </span>
        
@@ -103,13 +106,13 @@
 
         </ion-list>
         <!-- Only allow form to be submitted IF validation criteria for
-                input fields has been successfully passed -->
+                input fields has been successfully passed   text-center
+            [disabled]="!form.valid"-->
            <button
             ion-button
             block
             margin-top
             color="dark"
-            text-center
-            [disabled]="!form.valid">Submit</button>
+            (click)="submitQuiz()">Submit</button>
      </form>
 </ion-content>
