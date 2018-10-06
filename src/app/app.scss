@@ -40,5 +40,9 @@
 ion-title ion-icon{
 float:right;
 padding:3px 5px;
-border: 0.5px solid white;
+border: 0.5px solid red;
+}
+ion-content{
+    background-color: rgb(128, 138, 158);
+    color:rgb(128, 138, 158);
 }
