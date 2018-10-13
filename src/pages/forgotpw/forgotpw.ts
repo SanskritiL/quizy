@@ -18,7 +18,7 @@ export class ForgotpwPage {
   @ViewChild('username') user;
   constructor(public navCtrl: NavController, public navParams: NavParams, private fire: AngularFireAuth, public alertCtrl: AlertController) {
   }
-
+//repo
   showAlert(message:string){
     const alert = this.alertCtrl.create({
      title: 'Info',

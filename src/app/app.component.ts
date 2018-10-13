@@ -8,7 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { ModePage } from '../pages/mode/mode';
 import { HomePage } from '../pages/home/home';
-
+//repo
 @Component({
   templateUrl: 'app.html'
 })

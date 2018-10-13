@@ -71,6 +71,7 @@ const firebaseAuth = {
     StudenthomePage,
     ForgotpwPage
   ],
+  //repo
   providers: [
     StatusBar,
     SplashScreen,
