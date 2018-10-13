@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { RegisterPage } from '../register/register';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModePage } from '../mode/mode';
+import { ForgotpwPage } from '../forgotpw/forgotpw';
 
 /**
  * Generated class for the LoginPage page.
@@ -54,6 +55,9 @@ signIn(){
 
 register(){
   this.navCtrl.push(RegisterPage);
+}
+resetpw(){
+  this.navCtrl.push(ForgotpwPage);
 }
 
 }
