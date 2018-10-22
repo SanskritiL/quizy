@@ -16,6 +16,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ModePage } from '../pages/mode/mode';
 import { ForgotpwPage } from '../pages/forgotpw/forgotpw';
 import { StudenthomePage } from '../pages/studenthome/studenthome';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -54,7 +55,8 @@ const firebaseAuth = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

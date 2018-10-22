@@ -26,7 +26,7 @@
     [formGroup]="form"
     (ngSubmit)="manage(form.value)">
      <ion-list
-        margin-bottom color="go">
+        margin-bottom >
        <ion-item
           margin-bottom
           no-lines>
@@ -52,7 +52,7 @@
         [formGroupName]="i"
         *ngFor="let quest of form.controls.questions.controls; let i = index">
         <ion-item-group>
-            <ion-item-divider class="itemdivider"color="secondary">Question no.{{ i + 1 }}</ion-item-divider>
+            <ion-item-divider class="itemdivider">Question no.{{ i + 1 }}</ion-item-divider>
            <ion-item>
               <ion-label floating>Question</ion-label>
               <ion-input
