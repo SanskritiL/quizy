@@ -4,6 +4,8 @@ import { LoginPage } from '../login/login';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import {AngularFireList} from 'angularfire2/database'; 
+import { QuizCode, Users } from '../../models/quizcodeitem/quizcode.interface';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -20,14 +22,15 @@ export class RegisterPage {
   @ViewChild('username') user;
   @ViewChild('password') password;
   @ViewChild('nickname') nickname;
-  users: any[];
-  constructor(public alertCtrl: AlertController, private fire: AngularFireAuth  ,public navCtrl: NavController, public navParams: NavParams, private fdb: AngularFireDatabase) {
-  fdb.list('/users/').valueChanges()
-  .subscribe(users => {
-    this.users = users;
-    console.log(this.users);
-  });
-    
+
+
+  users= {} as Users;
+
+  users$: AngularFireList<Users>;
+
+  constructor(public alertCtrl: AlertController, private fire: AngularFireAuth  ,public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
+   
+   this.users$ = this.database.list('users');
   
   }
 
@@ -69,6 +72,11 @@ registerUser(){
      console.log('got data' ,data);
     this.showAlert("Successfully registered. Thank you for creating your account with us. Login to enjoy the app");
     
+    this.users$.push({
+      email: this.user.value,
+      password: this.password.value,
+      nickname: this.nickname.value
+   });
 
   })
   .catch(error => {

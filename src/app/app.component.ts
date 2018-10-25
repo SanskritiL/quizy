@@ -15,7 +15,7 @@ import { HomecreatequizPage } from '../pages/homecreatequiz/homecreatequiz';
 })
 export class MyApp {
   
-  rootPage:any = LoginPage;
+  rootPage:any = HomecreatequizPage;
   @ViewChild(Nav) nav: Nav;
 
   pages: Array<{ title: string, component: any, icon: string}>;

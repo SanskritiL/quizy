@@ -1,17 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
+import { QuizCode, Users, Questions } from '../../models/quizcodeitem/quizcode.interface';
+import {AngularFireList} from 'angularfire2/database'; 
+import { AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'page-homecreatequiz',
   templateUrl: 'homecreatequiz.html'
 })
 export class HomecreatequizPage {
+
+questions= {} as Questions;
+questions$: AngularFireList<Questions>;
+i = 1;
+j=0;
+z=0;
 public form : FormGroup;
-  constructor(public navCtrl: NavController,
-     private _FB: FormBuilder,
+  constructor(public navCtrl: NavController, private databse: AngularFireDatabase,
+     private _FB: FormBuilder, public navParams: NavParams,
      public alertCtrl: AlertController) {
 
+     this.questions$ = this.databse.list('Questions');
 
       this.form = this._FB.group({
           name: ['',Validators.required],
@@ -22,6 +32,12 @@ public form : FormGroup;
       });
 
   }
+
+ionViewDidLoad(){
+  
+  //console.log(code);
+}
+
 initQuestionsField(): FormGroup{
  return this._FB.group({
   name : ['',Validators.required]
@@ -31,6 +47,7 @@ initQuestionsField(): FormGroup{
 addNewInputField():void {
   const control = <FormArray>this.form.controls.questions;
   control.push(this.initQuestionsField());
+  this.i=this.i +1;
 }
 removeInputField(i :number):void{
   const control =<FormArray>this.form.controls.questions;
@@ -48,20 +65,17 @@ showAlert(message:string){
 alert.present();
  }
 
+submitQuiz(questions: Questions){
+  let code = this.navParams.get('quizCode');
+  
+     console.log(questions);
 
-
-
-
-
-
-submitQuiz(){
-  this.showAlert('It should submit all the datas to database');
 }
 showOptions(){
   this.showAlert("This shoud provide various options like: radio buttons, attach image etc (hopefully)");
 }
 manage(val : any):void{
-  console.dir(val);
+  //console.dir(val);
 }
 }
 
