@@ -7,6 +7,6 @@ export interface Users {
     nickname: String;
 }
 export interface Questions{
-    //code:String;
+    code: String;
     question: any;
 }

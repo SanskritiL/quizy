@@ -25,13 +25,11 @@ export class HomePage {
   }
   
 onclick(quizCode: QuizCode){
-  console.log(quizCode);
-  this.navCtrl.push(HomecreatequizPage,this.quizCode);
+  //console.log(quizCode);
+  this.navCtrl.push(HomecreatequizPage,quizCode);
 
 //create a new Obj &push under code list
-  this.quizCode$.push({
-     code: this.quizCode.code
-  });
+  
 
 }
 

@@ -10,19 +10,20 @@ import { AngularFireDatabase} from 'angularfire2/database';
   templateUrl: 'homecreatequiz.html'
 })
 export class HomecreatequizPage {
-
+  quizCode= {} as QuizCode;
 questions= {} as Questions;
 questions$: AngularFireList<Questions>;
 i = 1;
 j=0;
 z=0;
+
 public form : FormGroup;
   constructor(public navCtrl: NavController, private databse: AngularFireDatabase,
      private _FB: FormBuilder, public navParams: NavParams,
      public alertCtrl: AlertController) {
 
      this.questions$ = this.databse.list('Questions');
-
+      
       this.form = this._FB.group({
           name: ['',Validators.required],
           questions :this._FB.array([
@@ -34,8 +35,9 @@ public form : FormGroup;
   }
 
 ionViewDidLoad(){
-  
-  //console.log(code);
+  console.log("herum");
+  let code = this.navParams.get('code');
+  console.log(code);
 }
 
 initQuestionsField(): FormGroup{
@@ -66,9 +68,19 @@ alert.present();
  }
 
 submitQuiz(questions: Questions){
-  let code = this.navParams.get('quizCode');
-  
-     console.log(questions);
+  var code = this.navParams.get('code');
+  console.log(code);
+  for (var z = 0; z < this.i; z++) {
+    console.log(questions[z]);
+   this.questions$.push({
+    code: code,
+     question: questions[z]
+   });
+
+  }
+  /**this.quizCode$.push({
+     code: this.quizCode.code
+  }); */
 
 }
 showOptions(){
